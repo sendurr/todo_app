@@ -4,30 +4,17 @@
 
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
-    <title>Calculator</title>
+    <title>Todo App</title>
 </head>
 
 <body>
-    <h1>Calculator App</h1>
-    <div ng-controller="calcCtrl">
-        arg1 <input type="number" ng-model = "arg1"></input>
-        {{operator}}
-        arg2 <input type="number" ng-model = "arg2"></input>
-        <button ng-click="calculate()">=</button>
-        {{result}}
-        </br>
-        Choose Option
-        <button ng-click="add()">+</button>
-        <button ng-click="sub()">-</button>
-        <button ng-click="div()">/</button>
-        <button ng-click="mul()">*</button>
-        <div ng-show="showrecent">
-        <hr/>
-            Recent Transactions
-            <p ng-repeat="recent in recenthistory">
-                {{recent.arg1}} {{recent.oper}} {{recent.arg2}} = {{recent.result}}
-            </p>
-        </div>
+    <h1>Todo App</h1>
+    <div ng-controller="todoCtl">
+        Add a ToDo:</br>
+        <input type="text" ng-model="input" placeholder="Enter todo"></input></br>
+        <button ng-click="addTodo()">Add</button>
+        <p>Your Todo</p>
+        <p><button ng-click="editTodo()">Edit</button></p>
     </div>
 
 </body>
