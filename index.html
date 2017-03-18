@@ -14,10 +14,14 @@
         <input type="text" ng-model="input" placeholder="Enter todo"></input></br>
         <button ng-click="addTodo()">Add</button>
         <p>Your Todo</p>
-        <p><button ng-click="editTodo()">Edit</button></p>
+        <p><button ng-click="editTodo()" ng-show="done">Edit</button></p>
+        <p><button ng-click="doneEdit()" ng-show="!done">Done</button></p>
         <br/>
-        <div ng-repeat="todo in todos">
-            {{$index+1}} {{todo.item}} </br>
+        <div ng-show = "!edit" ng-repeat="todo in todos">
+            {{$index+1}} {{todo.item}} <button ng-click="deleteTodo($index)">Delete</button></br>
+        </div>
+        <div ng-show = "edit" ng-repeat="todo in todos">
+            <input type="text" ng-model="todo.item" ></input></br>
         </div>
     </div>
 
